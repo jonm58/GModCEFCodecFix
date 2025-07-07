@@ -53,7 +53,7 @@ jobs:
 
       - name: PyInstaller Build (ZIP)
         if: ${{ runner.os == 'Windows' }}
-        run: Compress-Archive "dist/GModCEFCodecFix" "GModCEFCodecFix.zip"
+        run: Compress-Archive -CompressionLevel Optimal "dist\GModCEFCodecFix" "D:\a\GModCEFCodecFix\GModCEFCodecFix\dist\GModCEFCodecFix.zip"
 
       - name: Get Latest Release Info
         id: latest-release
