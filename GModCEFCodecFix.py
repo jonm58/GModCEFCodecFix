@@ -129,7 +129,7 @@ if systemProxies:
 
 try:
 	print("Getting remote version...")
-	versionRequest = httpx.get("https://raw.githubusercontent.com/solsticegamestudios/GModCEFCodecFix/master/version.txt", follow_redirects=True, timeout=60)
+	versionRequest = httpx.get("https://fastly.jsdelivr.net/gh/solsticegamestudios/GModCEFCodecFix@master/version.txt", follow_redirects=True, timeout=60)
 
 	if versionRequest.status_code == 200:
 		remoteVersion = int(versionRequest.text)
@@ -517,7 +517,7 @@ if "-nochromium" in gmodUserLaunchOptions:
 
 # Get CEFCodecFix Manifest
 try:
-	manifestRequest = httpx.get("https://raw.githubusercontent.com/solsticegamestudios/GModCEFCodecFix/master/manifest.json", follow_redirects=True, timeout=60)
+	manifestRequest = httpx.get("https://fastly.jsdelivr.net/gh/solsticegamestudios/GModCEFCodecFix@master/manifest.json", follow_redirects=True, timeout=60)
 
 	if manifestRequest.status_code != 200:
 		sys.exit(colored("Error: CEFCodecFix Manifest Failed to Load! Status Code: " + str(manifestRequest.status_code) + contactInfo, "red"))
